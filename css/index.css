@@ -8,7 +8,7 @@
 .wrapper{
     display: grid;
     grid-template-columns: 2fr  1fr;
-    grid-template-rows: 3fr 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr;
     grid-template-areas: 
     "header     header"
     "nav        nav"
@@ -24,9 +24,19 @@
 .wrapper > div:nth-child(odd){
     background: #ddd;
 }
+
+/* Header Starts Here */ 
 .header{
     grid-area: header;
 }
+
+.banner{
+    display: inline-block;
+    width: 277px;
+    font-size: large;
+    margin-left: 4px;
+}  
+
 .nav{
     grid-area: nav;
     
@@ -49,6 +59,20 @@ nav ul li {
     font-size: 25px;
     padding: 0;
     transform: translate(10px, -10px);
+}
+
+#bar {
+    text-align: justify;
+    min-width: 500px;
+    padding-right: 40px;
+}
+#bar:after {
+    content: '';
+    display: inline-block;
+    width: 90%;
+}
+#bar li {
+    display: inline-block;
 }
 
 a {

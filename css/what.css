@@ -21,6 +21,7 @@
 }
 .nav{
     grid-area: nav;
+    
 }
 .content{
     grid-area: content;

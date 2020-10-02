@@ -34,3 +34,10 @@
 .link{
     grid-area: link;
 }
+#gmap_canvas{
+    border-radius: 5px;
+    
+}
+ul {
+    list-style: none;
+}

@@ -1,0 +1,36 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 2fr  1fr;
+    grid-template-rows: 3fr 3fr 2fr 2fr;
+    grid-template-areas: 
+    "header header"
+    "nav    nav"
+    "link  content"
+    "footer footer";
+    grid-gap: 1em;
+}
+.wrapper > div {
+    background: #eee;
+    padding: 1em;
+}
+.wrapper > div:nth-child(odd){
+    background: #ddd;
+}
+.header{
+    grid-area: header;
+}
+.nav{
+    grid-area: nav;
+}
+.content{
+    grid-area: content;
+}
+.newsfeed{
+    grid-area: newsfeed;
+}
+.footer{
+    grid-area: footer;
+}
+.link{
+    grid-area: link;
+}

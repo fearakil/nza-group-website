@@ -1,66 +1,66 @@
-/* .wrapper{
-    grid-template-areas:
-        "header header"
-        "nav    nav"
-        "links  content"
-        "footer footer";
-} */
+body {
+    margin:0;padding:0
+}
+
 .wrapper{
     display: grid;
-    grid-template-columns: 2fr  1fr;
-    grid-template-rows: 1fr 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr  1fr 1fr;
+    /* grid-template-rows: 1fr .4fr 1 1fr; */
     grid-template-areas: 
-    "header     header"
-    "nav        nav"
-    "content    newsfeed"
-    "content    contact";
-    grid-gap: 1em;
-} 
-
-.wrapper > div {
-    background: #eee;
-    padding: 1em;
-}
-.wrapper > div:nth-child(odd){
-    background: #ddd;
+        "l_side header     header       r_side"
+        "l_side nav        nav          r_side"
+        "l_side content    newsfeed     r_side"
+        "l_side content    contact      r_side";
+    /* grid-gap: 1em; */
 }
 
+.l_side{
+    grid-area: l_side;
+}
+.r_side{
+    grid-area: r_side;
+}
+.side-panel{
+    max-width: 284px;
+    height: 894px;
+}
+
+.logo{
+    margin-left: 20px;
+    border-style: double;
+}
 /* Header Starts Here */ 
 .header{
+    
     grid-area: header;
 }
-
 .banner{
     display: inline-block;
     width: 277px;
     font-size: large;
     margin-left: 4px;
 }  
-
-.nav{
-    grid-area: nav;
-    
-   
+.nav{   
+    grid-area: nav; 
 }
-/* Navigation Bar Content */
 
+/* Navigation Bar Content */
 nav {
+    margin-left: 20px;
         border-top: solid black;
         border-bottom: solid black;
         padding: 0;
-        margin: 0;
-        height:40px;
+        height:28px;
+    margin-right: 20px; 
     }
-
 nav ul li {
     list-style: none;
     display: inline-block;
     margin: -1px auto;
-    font-size: 25px;
+    font-size: 16px;
     padding: 0;
     transform: translate(10px, -10px);
 }
-
 #bar {
     text-align: justify;
     min-width: 500px;
@@ -85,16 +85,42 @@ a:hover
      text-decoration:none; 
      cursor:pointer;  
 }
+/* Navigation Bar Content Ends */
 
+.bookshelf{
+    border-style: double;
+}
 .content{
+    margin-left: 20px;
     grid-area: content;
 }
+.content > p {
+    margin-right: 30px;
+}
+
 .newsfeed{
     grid-area: newsfeed;
     overflow-y: scroll;
-    
+    margin-right: 20px;
+    background-color: rgb(116, 29, 29);
+    color: white;
+    /* height: min-content; */
+    float:right; 
+    height: 300px; 
+    width:200px; 
+    padding:10px; 
+}
 
+.contact > p:first-line { 
+    font-weight: bold; 
 }
 .contact{
     grid-area: contact;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: small;
+}
+.contact > p> a[href^="email"]{
+    color: rgb(116, 29, 29);
+    text-decoration: underline;
 }

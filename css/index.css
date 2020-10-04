@@ -91,6 +91,9 @@ a:hover
 }
 .newsfeed{
     grid-area: newsfeed;
+    overflow-y: scroll;
+    
+
 }
 .contact{
     grid-area: contact;

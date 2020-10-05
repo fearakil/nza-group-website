@@ -1,25 +1,37 @@
-.wrapper{
-    display: grid;
-    grid-template-columns: 2fr  1fr;
-    grid-template-rows: 3fr 3fr 2fr 2fr;
-    grid-template-areas: 
-    "header header"
-    "nav    nav"
-    "link  content"
-    "footer footer";
-    grid-gap: 1em;
-}
-.wrapper > div {
-    background: #eee;
-    padding: 1em;
-}
-.wrapper > div:nth-child(odd){
-    background: #ddd;
+body {
+    margin:0;padding:0
 }
 
+.wrapper{
+    display: grid;
+    /* grid-template-columns: 1fr 2fr  1fr 1fr; */
+    /* grid-template-rows: 1fr .4fr 1fr 1fr; */
+    grid-template-areas: 
+        "l_side header     header       r_side"
+        "l_side nav        nav          r_side"
+        "l_side left-sidebar    content      r_side"
+        "l_side left-sidebar    content      r_side"
+        "l_side footer footer r_side";
+    /* grid-gap: 1em; */
+}
+.l_side{
+    grid-area: l_side;
+}
+.r_side{
+    grid-area: r_side;
+}
+.side-panel{
+    max-width: 284px;
+    height: 894px;
+}
+.logo{
+    margin-left: 20px;
+    border-style: double;
+}
 /* Header Starts Here */ 
 .header{
     grid-area: header;
+    
 }
 
 .banner{
@@ -29,32 +41,28 @@
     margin-left: 4px;
 }  
 
-/* NavBar Content Begins Here */
+/* Navigation Bar Content */
 
 .nav{
-    grid-area: nav;
-    
-   
+    grid-area: nav; 
 }
-/* Items in Nav Bar */
 
 nav {
+    margin-left: 20px;
         border-top: solid black;
         border-bottom: solid black;
         padding: 0;
-        margin: 0;
-        height:40px;
+        height:28px;
+    margin-right: 20px; 
     }
-
 nav ul li {
     list-style: none;
     display: inline-block;
     margin: -1px auto;
-    font-size: 25px;
+    font-size: 16px;
     padding: 0;
     transform: translate(10px, -10px);
 }
-
 #bar {
     text-align: justify;
     min-width: 500px;
@@ -79,15 +87,76 @@ a:hover
      text-decoration:none; 
      cursor:pointer;  
 }
+/* Navigation Bar Content Ends */ 
 
-/*End of NavBar Content */ 
+.left-sidebar{
+    margin-left: 20px;
+    grid-area: left-sidebar;
+    margin-right: 30px;
+    background-color: rgb(116, 29, 29);
+    float:left; 
+    height: 470px; 
+    width:200px; 
+    padding:10px;
+    color: white;
+    font-size: small;
+}
+.caption1{
+    color: rgb(116, 29, 29);
+    font-size: 30px;
+    position: absolute;
+    top: 57%;
+    left: 44%;
+    transform: translate(-50%, -50%); 
+}
+.caption2{
+    color: rgb(116, 29, 29);
+    font-size: 30px;
+    position: absolute;
+    top: 57%;
+    left: 64%;
+    transform: translate(-50%, -50%); 
+}
+.caption3{
+    color: rgb(116, 29, 29);
+    font-size: 30px;
+    position: absolute;
+    top: 73%;
+    left: 43%;
+    transform: translate(-50%, -50%); 
+}
+.caption4{
+    color: rgb(116, 29, 29);
+    font-size: 30px;
+    position: absolute;
+    top: 73%;
+    left: 66%;
+    transform: translate(-50%, -50%); 
+}
+.attorney{
+    border-style: solid;
+    border-width: thin;
+    border-color: white;
+}
+.context{
+    padding-left: 1.5em;
+    text-indent:-1.5em;
+}
+.photo-grid{
+    grid-column: col 3 / span 2;
+    grid-row: row 2;
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr;
+}
 
 .content{
     grid-area: content;
 }
-.newsfeed{
-    grid-area: newsfeed;
+.first-paragraph{
+    margin-right: 55px;
 }
+
 .footer{
     grid-area: footer;
 }
@@ -96,6 +165,8 @@ a:hover
 footer{
     border-top: 2px solid black;
     text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 footer ul {
     list-style-type: none;
@@ -121,6 +192,4 @@ footer h6{
     margin: 0px;
     color: grey;
 }
-.link{
-    grid-area: link;
-}
+

@@ -10,5 +10,5 @@
     Images & Placement on all files
 
  Patrick:
-    Sidebars & Content on who and what files 
+    Sidebars & Content on who and what files. 
     News Feed on Home page
